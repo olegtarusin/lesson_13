@@ -1,0 +1,320 @@
+.wrapper {
+   position: relative;
+   min-height: 100%;
+   overflow: hidden;
+   font-family: lato, sans-serif;
+   font-weight: 900;
+   font-style: normal;
+}
+
+[class*="container"] {
+   max-width: 1230px;
+   margin: 0 auto;
+   padding: 20px;
+   padding-top: 0px;
+   position: relative;
+}
+
+
+.header__container {
+   background-color: rgb(136, 134, 141);
+}
+
+[class*="__title"] {
+   font-size: 30px;
+   letter-spacing: 5px;
+}
+
+[class*="__text"] {
+   font-size: 25px;
+}
+
+.arrive {
+   overflow: hidden;
+}
+
+.arrive__title {
+   animation-name: appear-title;
+   animation-duration: 3s;
+   text-align: center;
+}
+
+@keyframes appear-title {
+   0% {
+      transform: translateY(-200%);
+      opacity: 0;
+   }
+
+   100% {
+      transform: translateY(0%);
+      opacity: 1;
+   }
+}
+
+.arrive__text {
+   animation-name: appear-text;
+   animation-duration: 3s;
+   animation-fill-mode: forwards;
+
+}
+
+@keyframes appear-text {
+   0% {
+      transform: translateY(200%);
+   }
+
+   100% {
+      transform: translateY(0%);
+      color: antiquewhite;
+   }
+}
+
+.section__list li {
+   position: relative;
+   line-height: 50px;
+   padding-left: 50px;
+
+}
+
+.section__list li::before {
+   content: "";
+   background: url('../img/clock.jpg') 0px 0px / cover no-repeat;
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+}
+
+.section__list li::after {
+   content: "";
+   background: url('../img/switches.webp') 0px 0px / cover no-repeat;
+   width: 12.5px;
+   height: 15px;
+   position: absolute;
+   top: 2px;
+   left: 0px;
+   transform-origin: 50% 100%;
+   transform: translate(60%, 2%) scale(0.8);
+   animation-name: circle-swich;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+@keyframes circle-swich {
+   0% {
+      transform: translate(60%, 2%) scale(0.8) rotate(0deg);
+   }
+
+   100% {
+      transform: translate(60%, 2%) scale(0.8) rotate(360deg);
+   }
+}
+
+.car {
+   width: 500px;
+   position: relative;
+   left: -600px;
+   height: 220px;
+   animation: car 10s ease infinite;
+}
+
+@keyframes car {
+   0% {
+      transform: translate(0px);
+   }
+
+   30% {
+      transform: translate(1000px);
+   }
+
+   80% {
+      transform: translate(1000px);
+   }
+
+   100% {
+      transform: translate(2000px);
+   }
+}
+
+
+
+.car__top {
+   background-color: red;
+   background-color: red;
+   position: relative;
+   height: 60px;
+   width: 300px;
+   left: 50px;
+   border-radius: 50px 50px 0px 0px;
+   overflow: hidden;
+}
+
+.car__window {
+   background-color: rgb(123, 123, 221);
+   height: 50px;
+   width: 200px;
+   position: relative;
+   top: 10px;
+   left: 100px;
+}
+
+.car__bottom {
+   background-color: red;
+   position: relative;
+   height: 100px;
+   width: 500px;
+   border-radius: 50px 50px 20px 20px;
+}
+
+.car__title {
+   text-align: center;
+   color: antiquewhite;
+}
+
+.car__wheel {
+   border: 10px solid #000;
+   border-radius: 50%;
+   background: url('../img/wheel-under.jpg') center /120px 120px no-repeat;
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   bottom: -50px;
+   animation-name: wheel;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   animation-duration: 3s;
+}
+
+@keyframes wheel {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.car__wheel:first-child {
+   left: 20px;
+}
+
+.car__wheel:last-child {
+   right: 20px;
+}
+
+.section__hover-box {
+   border: 1px dashed #000;
+}
+
+.hover-box__box {
+   width: 200px;
+   height: 200px;
+   background-color: yellowgreen;
+   opacity: 0;
+   transition: opacity 1s linear 0s, width 3s linear 1s, background-color 1s linear 4s;
+}
+
+.hover-box__box:hover {
+   width: 300px;
+   background-color: blueviolet;
+   opacity: 1;
+}
+
+.pendulum {
+   width: 300px;
+   border-top: 10px solid #000;
+   font-size: 0px;
+   margin: 0 auto;
+
+}
+
+.pendulum__swich {
+   width: 100px;
+   height: 400px;
+   display: inline-block;
+   position: relative;
+   overflow: visible;
+}
+
+.pendulum__top {
+   width: 10px;
+   height: 300px;
+   background-color: #000;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.pendulum__bottom {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background-color: #000;
+   position: absolute;
+   bottom: 0px;
+}
+
+.pendulum__swich {
+   transform-origin: 50px 0px;
+   animation-iteration-count: infinite;
+   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.pendulum__swich:first-child {
+   animation-name: moveleft;
+   animation-duration: 1s;
+}
+
+.pendulum__swich:last-child {
+   animation-name: moveright;
+   animation-duration: 1s;
+   animation-delay: 0.5s;
+
+}
+
+@keyframes moveleft {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   30% {
+      transform: rotate(0deg);
+   }
+
+   50% {
+      transform: rotate(45deg);
+   }
+
+   60% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(0deg);
+   }
+}
+
+@keyframes moveright {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   30% {
+      transform: rotate(0deg);
+   }
+
+   50% {
+      transform: rotate(-45deg);
+   }
+
+   60% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(0deg);
+   }
+}
